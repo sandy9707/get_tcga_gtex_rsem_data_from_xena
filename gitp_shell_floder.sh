@@ -18,7 +18,7 @@ SHELL_FOLDER=$(
 )
 echo $SHELL_FOLDER
 cd $SHELL_FOLDER
-git add gitp_shell_floder.sh
+git add .
 commitTime=$(date +"%Y-%m-%d %H-%M-%S")
 git commit -a -m "${commitTime}"
 git push origin main

@@ -1,0 +1,440 @@
+.
+├── 1.read_data_tcga_gtex.R
+├── 2.get_deg.R
+├── data
+│   ├── GTEX
+│   │   ├── Adipose Tissue
+│   │   │   ├── Adipose Tissue_expr.csv
+│   │   │   ├── Adipose Tissue_expr_ph.Rdata
+│   │   │   └── Adipose Tissue_ph.csv
+│   │   ├── Adrenal Gland
+│   │   │   ├── Adrenal Gland_expr.csv
+│   │   │   ├── Adrenal Gland_expr_ph.Rdata
+│   │   │   └── Adrenal Gland_ph.csv
+│   │   ├── Bladder
+│   │   │   ├── Bladder_expr.csv
+│   │   │   ├── Bladder_expr_ph.Rdata
+│   │   │   └── Bladder_ph.csv
+│   │   ├── Blood
+│   │   │   ├── Blood_expr.csv
+│   │   │   ├── Blood_expr_ph.Rdata
+│   │   │   └── Blood_ph.csv
+│   │   ├── Blood Vessel
+│   │   │   ├── Blood Vessel_expr.csv
+│   │   │   ├── Blood Vessel_expr_ph.Rdata
+│   │   │   └── Blood Vessel_ph.csv
+│   │   ├── Bone Marrow
+│   │   │   ├── Bone Marrow_expr.csv
+│   │   │   ├── Bone Marrow_expr_ph.Rdata
+│   │   │   └── Bone Marrow_ph.csv
+│   │   ├── Brain
+│   │   │   ├── Brain_expr.csv
+│   │   │   ├── Brain_expr_ph.Rdata
+│   │   │   └── Brain_ph.csv
+│   │   ├── Brain Basal Ganglia
+│   │   │   ├── Brain Basal Ganglia_expr.csv
+│   │   │   ├── Brain Basal Ganglia_expr_ph.Rdata
+│   │   │   └── Brain Basal Ganglia_ph.csv
+│   │   ├── Brain Cerebellum
+│   │   │   ├── Brain Cerebellum_expr.csv
+│   │   │   ├── Brain Cerebellum_expr_ph.Rdata
+│   │   │   └── Brain Cerebellum_ph.csv
+│   │   ├── Brain Cerebrum
+│   │   │   ├── Brain Cerebrum_expr.csv
+│   │   │   ├── Brain Cerebrum_expr_ph.Rdata
+│   │   │   └── Brain Cerebrum_ph.csv
+│   │   ├── Breast
+│   │   │   ├── Breast_expr.csv
+│   │   │   ├── Breast_expr_ph.Rdata
+│   │   │   └── Breast_ph.csv
+│   │   ├── Cervix Uteri
+│   │   │   ├── Cervix Uteri_expr.csv
+│   │   │   ├── Cervix Uteri_expr_ph.Rdata
+│   │   │   └── Cervix Uteri_ph.csv
+│   │   ├── Colon
+│   │   │   ├── Colon_expr.csv
+│   │   │   ├── Colon_expr_ph.Rdata
+│   │   │   └── Colon_ph.csv
+│   │   ├── Esophagus Mucosa
+│   │   │   ├── Esophagus Mucosa_expr.csv
+│   │   │   ├── Esophagus Mucosa_expr_ph.Rdata
+│   │   │   └── Esophagus Mucosa_ph.csv
+│   │   ├── Esophagus Substance
+│   │   │   ├── Esophagus Substance_expr.csv
+│   │   │   ├── Esophagus Substance_expr_ph.Rdata
+│   │   │   └── Esophagus Substance_ph.csv
+│   │   ├── Fallopian Tube
+│   │   │   ├── Fallopian Tube_expr.csv
+│   │   │   ├── Fallopian Tube_expr_ph.Rdata
+│   │   │   └── Fallopian Tube_ph.csv
+│   │   ├── Fibroblasts
+│   │   │   ├── Fibroblasts_expr.csv
+│   │   │   ├── Fibroblasts_expr_ph.Rdata
+│   │   │   └── Fibroblasts_ph.csv
+│   │   ├── Heart
+│   │   │   ├── Heart_expr.csv
+│   │   │   ├── Heart_expr_ph.Rdata
+│   │   │   └── Heart_ph.csv
+│   │   ├── Kidney
+│   │   │   ├── Kidney_expr.csv
+│   │   │   ├── Kidney_expr_ph.Rdata
+│   │   │   └── Kidney_ph.csv
+│   │   ├── Liver
+│   │   │   ├── Liver_expr.csv
+│   │   │   ├── Liver_expr_ph.Rdata
+│   │   │   └── Liver_ph.csv
+│   │   ├── Lung
+│   │   │   ├── Lung_expr.csv
+│   │   │   ├── Lung_expr_ph.Rdata
+│   │   │   └── Lung_ph.csv
+│   │   ├── Lymphocytes
+│   │   │   ├── Lymphocytes_expr.csv
+│   │   │   ├── Lymphocytes_expr_ph.Rdata
+│   │   │   └── Lymphocytes_ph.csv
+│   │   ├── Muscle
+│   │   │   ├── Muscle_expr.csv
+│   │   │   ├── Muscle_expr_ph.Rdata
+│   │   │   └── Muscle_ph.csv
+│   │   ├── Nerve
+│   │   │   ├── Nerve_expr.csv
+│   │   │   ├── Nerve_expr_ph.Rdata
+│   │   │   └── Nerve_ph.csv
+│   │   ├── Ovary
+│   │   │   ├── Ovary_expr.csv
+│   │   │   ├── Ovary_expr_ph.Rdata
+│   │   │   └── Ovary_ph.csv
+│   │   ├── Pancreas
+│   │   │   ├── Pancreas_expr.csv
+│   │   │   ├── Pancreas_expr_ph.Rdata
+│   │   │   └── Pancreas_ph.csv
+│   │   ├── Pituitary
+│   │   │   ├── Pituitary_expr.csv
+│   │   │   ├── Pituitary_expr_ph.Rdata
+│   │   │   └── Pituitary_ph.csv
+│   │   ├── Prostate
+│   │   │   ├── Prostate_expr.csv
+│   │   │   ├── Prostate_expr_ph.Rdata
+│   │   │   └── Prostate_ph.csv
+│   │   ├── Salivary Gland
+│   │   │   ├── Salivary Gland_expr.csv
+│   │   │   ├── Salivary Gland_expr_ph.Rdata
+│   │   │   └── Salivary Gland_ph.csv
+│   │   ├── Skin
+│   │   │   ├── Skin_expr.csv
+│   │   │   ├── Skin_expr_ph.Rdata
+│   │   │   └── Skin_ph.csv
+│   │   ├── Small Intestine
+│   │   │   ├── Small Intestine_expr.csv
+│   │   │   ├── Small Intestine_expr_ph.Rdata
+│   │   │   └── Small Intestine_ph.csv
+│   │   ├── Spleen
+│   │   │   ├── Spleen_expr.csv
+│   │   │   ├── Spleen_expr_ph.Rdata
+│   │   │   └── Spleen_ph.csv
+│   │   ├── Stomach
+│   │   │   ├── Stomach_expr.csv
+│   │   │   ├── Stomach_expr_ph.Rdata
+│   │   │   └── Stomach_ph.csv
+│   │   ├── TCGA_catagory.csv
+│   │   ├── Testis
+│   │   │   ├── Testis_expr.csv
+│   │   │   ├── Testis_expr_ph.Rdata
+│   │   │   └── Testis_ph.csv
+│   │   ├── Thyroid
+│   │   │   ├── Thyroid_expr.csv
+│   │   │   ├── Thyroid_expr_ph.Rdata
+│   │   │   └── Thyroid_ph.csv
+│   │   ├── Uterus
+│   │   │   ├── Uterus_expr.csv
+│   │   │   ├── Uterus_expr_ph.Rdata
+│   │   │   └── Uterus_ph.csv
+│   │   └── Vagina
+│   │       ├── Vagina_expr.csv
+│   │       ├── Vagina_expr_ph.Rdata
+│   │       └── Vagina_ph.csv
+│   ├── gtex_tcga_expr_ph.Rdata
+│   ├── gtex_tcga_ph.csv
+│   ├── TCGA
+│   │   ├── Acute Myeloid Leukemia
+│   │   │   ├── Acute Myeloid Leukemia_expr.csv
+│   │   │   ├── Acute Myeloid Leukemia_expr_ph.Rdata
+│   │   │   └── Acute Myeloid Leukemia_ph.csv
+│   │   ├── Adrenocortical Cancer
+│   │   │   ├── Adrenocortical Cancer_expr.csv
+│   │   │   ├── Adrenocortical Cancer_expr_ph.Rdata
+│   │   │   └── Adrenocortical Cancer_ph.csv
+│   │   ├── Bladder Urothelial Carcinoma
+│   │   │   ├── Bladder Urothelial Carcinoma_expr.csv
+│   │   │   ├── Bladder Urothelial Carcinoma_expr_ph.Rdata
+│   │   │   └── Bladder Urothelial Carcinoma_ph.csv
+│   │   ├── Brain Lower Grade Glioma
+│   │   │   ├── Brain Lower Grade Glioma_expr.csv
+│   │   │   ├── Brain Lower Grade Glioma_expr_ph.Rdata
+│   │   │   └── Brain Lower Grade Glioma_ph.csv
+│   │   ├── Breast Invasive Carcinoma
+│   │   │   ├── Breast Invasive Carcinoma_expr.csv
+│   │   │   ├── Breast Invasive Carcinoma_expr_ph.Rdata
+│   │   │   └── Breast Invasive Carcinoma_ph.csv
+│   │   ├── Cervical & Endocervical Cancer
+│   │   │   ├── Cervical & Endocervical Cancer_expr.csv
+│   │   │   ├── Cervical & Endocervical Cancer_expr_ph.Rdata
+│   │   │   └── Cervical & Endocervical Cancer_ph.csv
+│   │   ├── Cholangiocarcinoma
+│   │   │   ├── Cholangiocarcinoma_expr.csv
+│   │   │   ├── Cholangiocarcinoma_expr_ph.Rdata
+│   │   │   └── Cholangiocarcinoma_ph.csv
+│   │   ├── Colon Adenocarcinoma
+│   │   │   ├── Colon Adenocarcinoma_expr.csv
+│   │   │   ├── Colon Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Colon Adenocarcinoma_ph.csv
+│   │   ├── Diffuse Large B-Cell Lymphoma
+│   │   │   ├── Diffuse Large B-Cell Lymphoma_expr.csv
+│   │   │   ├── Diffuse Large B-Cell Lymphoma_expr_ph.Rdata
+│   │   │   └── Diffuse Large B-Cell Lymphoma_ph.csv
+│   │   ├── Esophageal Carcinoma
+│   │   │   ├── Esophageal Carcinoma_expr.csv
+│   │   │   ├── Esophageal Carcinoma_expr_ph.Rdata
+│   │   │   └── Esophageal Carcinoma_ph.csv
+│   │   ├── Glioblastoma Multiforme
+│   │   │   ├── Glioblastoma Multiforme_expr.csv
+│   │   │   ├── Glioblastoma Multiforme_expr_ph.Rdata
+│   │   │   └── Glioblastoma Multiforme_ph.csv
+│   │   ├── Head & Neck Squamous Cell Carcinoma
+│   │   │   ├── Head & Neck Squamous Cell Carcinoma_expr.csv
+│   │   │   ├── Head & Neck Squamous Cell Carcinoma_expr_ph.Rdata
+│   │   │   └── Head & Neck Squamous Cell Carcinoma_ph.csv
+│   │   ├── Kidney Chromophobe
+│   │   │   ├── Kidney Chromophobe_expr.csv
+│   │   │   ├── Kidney Chromophobe_expr_ph.Rdata
+│   │   │   └── Kidney Chromophobe_ph.csv
+│   │   ├── Kidney Clear Cell Carcinoma
+│   │   │   ├── Kidney Clear Cell Carcinoma_expr.csv
+│   │   │   ├── Kidney Clear Cell Carcinoma_expr_ph.Rdata
+│   │   │   └── Kidney Clear Cell Carcinoma_ph.csv
+│   │   ├── Kidney Papillary Cell Carcinoma
+│   │   │   ├── Kidney Papillary Cell Carcinoma_expr.csv
+│   │   │   ├── Kidney Papillary Cell Carcinoma_expr_ph.Rdata
+│   │   │   └── Kidney Papillary Cell Carcinoma_ph.csv
+│   │   ├── Liver Hepatocellular Carcinoma
+│   │   │   ├── Liver Hepatocellular Carcinoma_expr.csv
+│   │   │   ├── Liver Hepatocellular Carcinoma_expr_ph.Rdata
+│   │   │   └── Liver Hepatocellular Carcinoma_ph.csv
+│   │   ├── Lung Adenocarcinoma
+│   │   │   ├── Lung Adenocarcinoma_expr.csv
+│   │   │   ├── Lung Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Lung Adenocarcinoma_ph.csv
+│   │   ├── Lung Squamous Cell Carcinoma
+│   │   │   ├── Lung Squamous Cell Carcinoma_expr.csv
+│   │   │   ├── Lung Squamous Cell Carcinoma_expr_ph.Rdata
+│   │   │   └── Lung Squamous Cell Carcinoma_ph.csv
+│   │   ├── Mesothelioma
+│   │   │   ├── Mesothelioma_expr.csv
+│   │   │   ├── Mesothelioma_expr_ph.Rdata
+│   │   │   └── Mesothelioma_ph.csv
+│   │   ├── Ovarian Serous Cystadenocarcinoma
+│   │   │   ├── Ovarian Serous Cystadenocarcinoma_expr.csv
+│   │   │   ├── Ovarian Serous Cystadenocarcinoma_expr_ph.Rdata
+│   │   │   └── Ovarian Serous Cystadenocarcinoma_ph.csv
+│   │   ├── Pancreatic Adenocarcinoma
+│   │   │   ├── Pancreatic Adenocarcinoma_expr.csv
+│   │   │   ├── Pancreatic Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Pancreatic Adenocarcinoma_ph.csv
+│   │   ├── Pheochromocytoma & Paraganglioma
+│   │   │   ├── Pheochromocytoma & Paraganglioma_expr.csv
+│   │   │   ├── Pheochromocytoma & Paraganglioma_expr_ph.Rdata
+│   │   │   └── Pheochromocytoma & Paraganglioma_ph.csv
+│   │   ├── Prostate Adenocarcinoma
+│   │   │   ├── Prostate Adenocarcinoma_expr.csv
+│   │   │   ├── Prostate Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Prostate Adenocarcinoma_ph.csv
+│   │   ├── Rectum Adenocarcinoma
+│   │   │   ├── Rectum Adenocarcinoma_expr.csv
+│   │   │   ├── Rectum Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Rectum Adenocarcinoma_ph.csv
+│   │   ├── Sarcoma
+│   │   │   ├── Sarcoma_expr.csv
+│   │   │   ├── Sarcoma_expr_ph.Rdata
+│   │   │   └── Sarcoma_ph.csv
+│   │   ├── Skin Cutaneous Melanoma
+│   │   │   ├── Skin Cutaneous Melanoma_expr.csv
+│   │   │   ├── Skin Cutaneous Melanoma_expr_ph.Rdata
+│   │   │   └── Skin Cutaneous Melanoma_ph.csv
+│   │   ├── Stomach Adenocarcinoma
+│   │   │   ├── Stomach Adenocarcinoma_expr.csv
+│   │   │   ├── Stomach Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Stomach Adenocarcinoma_ph.csv
+│   │   ├── Testicular Germ Cell Tumor
+│   │   │   ├── Testicular Germ Cell Tumor_expr.csv
+│   │   │   ├── Testicular Germ Cell Tumor_expr_ph.Rdata
+│   │   │   └── Testicular Germ Cell Tumor_ph.csv
+│   │   ├── Thymoma
+│   │   │   ├── Thymoma_expr.csv
+│   │   │   ├── Thymoma_expr_ph.Rdata
+│   │   │   └── Thymoma_ph.csv
+│   │   ├── Thyroid Carcinoma
+│   │   │   ├── Thyroid Carcinoma_expr.csv
+│   │   │   ├── Thyroid Carcinoma_expr_ph.Rdata
+│   │   │   └── Thyroid Carcinoma_ph.csv
+│   │   ├── Uterine Carcinosarcoma
+│   │   │   ├── Uterine Carcinosarcoma_expr.csv
+│   │   │   ├── Uterine Carcinosarcoma_expr_ph.Rdata
+│   │   │   └── Uterine Carcinosarcoma_ph.csv
+│   │   ├── Uterine Corpus Endometrioid Carcinoma
+│   │   │   ├── Uterine Corpus Endometrioid Carcinoma_expr.csv
+│   │   │   ├── Uterine Corpus Endometrioid Carcinoma_expr_ph.Rdata
+│   │   │   └── Uterine Corpus Endometrioid Carcinoma_ph.csv
+│   │   └── Uveal Melanoma
+│   │       ├── Uveal Melanoma_expr.csv
+│   │       ├── Uveal Melanoma_expr_ph.Rdata
+│   │       └── Uveal Melanoma_ph.csv
+│   ├── tcga_gtex_conbined
+│   │   ├── ACC
+│   │   │   ├── Adrenocortical Cancer_expr.csv
+│   │   │   ├── Adrenocortical Cancer_expr_ph.Rdata
+│   │   │   └── Adrenocortical Cancer_ph.csv
+│   │   ├── BLCA
+│   │   │   ├── Bladder Urothelial Carcinoma_expr.csv
+│   │   │   ├── Bladder Urothelial Carcinoma_expr_ph.Rdata
+│   │   │   └── Bladder Urothelial Carcinoma_ph.csv
+│   │   ├── BRCA
+│   │   │   ├── Breast Invasive Carcinoma_expr.csv
+│   │   │   ├── Breast Invasive Carcinoma_expr_ph.Rdata
+│   │   │   └── Breast Invasive Carcinoma_ph.csv
+│   │   ├── CESC
+│   │   │   ├── Cervical & Endocervical Cancer_expr.csv
+│   │   │   ├── Cervical & Endocervical Cancer_expr_ph.Rdata
+│   │   │   └── Cervical & Endocervical Cancer_ph.csv
+│   │   ├── CHOL
+│   │   │   ├── Cholangiocarcinoma_expr.csv
+│   │   │   ├── Cholangiocarcinoma_expr_ph.Rdata
+│   │   │   └── Cholangiocarcinoma_ph.csv
+│   │   ├── COAD
+│   │   │   ├── Colon Adenocarcinoma_expr.csv
+│   │   │   ├── Colon Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Colon Adenocarcinoma_ph.csv
+│   │   ├── DLBC
+│   │   │   ├── Diffuse Large B-Cell Lymphoma_expr.csv
+│   │   │   ├── Diffuse Large B-Cell Lymphoma_expr_ph.Rdata
+│   │   │   └── Diffuse Large B-Cell Lymphoma_ph.csv
+│   │   ├── ESCA
+│   │   │   ├── Esophageal Carcinoma_expr.csv
+│   │   │   ├── Esophageal Carcinoma_expr_ph.Rdata
+│   │   │   └── Esophageal Carcinoma_ph.csv
+│   │   ├── GBM
+│   │   │   ├── Glioblastoma Multiforme_expr.csv
+│   │   │   ├── Glioblastoma Multiforme_expr_ph.Rdata
+│   │   │   └── Glioblastoma Multiforme_ph.csv
+│   │   ├── HNSC
+│   │   │   ├── Head & Neck Squamous Cell Carcinoma_expr.csv
+│   │   │   ├── Head & Neck Squamous Cell Carcinoma_expr_ph.Rdata
+│   │   │   └── Head & Neck Squamous Cell Carcinoma_ph.csv
+│   │   ├── KICH
+│   │   │   ├── Kidney Chromophobe_expr.csv
+│   │   │   ├── Kidney Chromophobe_expr_ph.Rdata
+│   │   │   └── Kidney Chromophobe_ph.csv
+│   │   ├── KIRC
+│   │   │   ├── Kidney Clear Cell Carcinoma_expr.csv
+│   │   │   ├── Kidney Clear Cell Carcinoma_expr_ph.Rdata
+│   │   │   └── Kidney Clear Cell Carcinoma_ph.csv
+│   │   ├── KIRP
+│   │   │   ├── Kidney Papillary Cell Carcinoma_expr.csv
+│   │   │   ├── Kidney Papillary Cell Carcinoma_expr_ph.Rdata
+│   │   │   └── Kidney Papillary Cell Carcinoma_ph.csv
+│   │   ├── LAML
+│   │   │   ├── Acute Myeloid Leukemia_expr.csv
+│   │   │   ├── Acute Myeloid Leukemia_expr_ph.Rdata
+│   │   │   └── Acute Myeloid Leukemia_ph.csv
+│   │   ├── LGG
+│   │   │   ├── Brain Lower Grade Glioma_expr.csv
+│   │   │   ├── Brain Lower Grade Glioma_expr_ph.Rdata
+│   │   │   └── Brain Lower Grade Glioma_ph.csv
+│   │   ├── LIHC
+│   │   │   ├── Liver Hepatocellular Carcinoma_expr.csv
+│   │   │   ├── Liver Hepatocellular Carcinoma_expr_ph.Rdata
+│   │   │   └── Liver Hepatocellular Carcinoma_ph.csv
+│   │   ├── LUAD
+│   │   │   ├── Lung Adenocarcinoma_expr.csv
+│   │   │   ├── Lung Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Lung Adenocarcinoma_ph.csv
+│   │   ├── LUSC
+│   │   │   ├── Lung Squamous Cell Carcinoma_expr.csv
+│   │   │   ├── Lung Squamous Cell Carcinoma_expr_ph.Rdata
+│   │   │   └── Lung Squamous Cell Carcinoma_ph.csv
+│   │   ├── MESO
+│   │   │   ├── Mesothelioma_expr.csv
+│   │   │   ├── Mesothelioma_expr_ph.Rdata
+│   │   │   └── Mesothelioma_ph.csv
+│   │   ├── OV
+│   │   │   ├── Ovarian Serous Cystadenocarcinoma_expr.csv
+│   │   │   ├── Ovarian Serous Cystadenocarcinoma_expr_ph.Rdata
+│   │   │   └── Ovarian Serous Cystadenocarcinoma_ph.csv
+│   │   ├── PAAD
+│   │   │   ├── Pancreatic Adenocarcinoma_expr.csv
+│   │   │   ├── Pancreatic Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Pancreatic Adenocarcinoma_ph.csv
+│   │   ├── PCPG
+│   │   │   ├── Pheochromocytoma & Paraganglioma_expr.csv
+│   │   │   ├── Pheochromocytoma & Paraganglioma_expr_ph.Rdata
+│   │   │   └── Pheochromocytoma & Paraganglioma_ph.csv
+│   │   ├── PRAD
+│   │   │   ├── Prostate Adenocarcinoma_expr.csv
+│   │   │   ├── Prostate Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Prostate Adenocarcinoma_ph.csv
+│   │   ├── READ
+│   │   │   ├── Rectum Adenocarcinoma_expr.csv
+│   │   │   ├── Rectum Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Rectum Adenocarcinoma_ph.csv
+│   │   ├── SARC
+│   │   │   ├── Sarcoma_expr.csv
+│   │   │   ├── Sarcoma_expr_ph.Rdata
+│   │   │   └── Sarcoma_ph.csv
+│   │   ├── SKCM
+│   │   │   ├── Skin Cutaneous Melanoma_expr.csv
+│   │   │   ├── Skin Cutaneous Melanoma_expr_ph.Rdata
+│   │   │   └── Skin Cutaneous Melanoma_ph.csv
+│   │   ├── STAD
+│   │   │   ├── Stomach Adenocarcinoma_expr.csv
+│   │   │   ├── Stomach Adenocarcinoma_expr_ph.Rdata
+│   │   │   └── Stomach Adenocarcinoma_ph.csv
+│   │   ├── TGCT
+│   │   │   ├── Testicular Germ Cell Tumor_expr.csv
+│   │   │   ├── Testicular Germ Cell Tumor_expr_ph.Rdata
+│   │   │   └── Testicular Germ Cell Tumor_ph.csv
+│   │   ├── THCA
+│   │   │   ├── Thyroid Carcinoma_expr.csv
+│   │   │   ├── Thyroid Carcinoma_expr_ph.Rdata
+│   │   │   └── Thyroid Carcinoma_ph.csv
+│   │   ├── THYM
+│   │   │   ├── Thymoma_expr.csv
+│   │   │   ├── Thymoma_expr_ph.Rdata
+│   │   │   └── Thymoma_ph.csv
+│   │   ├── UCEC
+│   │   │   ├── Uterine Corpus Endometrioid Carcinoma_expr.csv
+│   │   │   ├── Uterine Corpus Endometrioid Carcinoma_expr_ph.Rdata
+│   │   │   └── Uterine Corpus Endometrioid Carcinoma_ph.csv
+│   │   ├── UCS
+│   │   │   ├── Uterine Carcinosarcoma_expr.csv
+│   │   │   ├── Uterine Carcinosarcoma_expr_ph.Rdata
+│   │   │   └── Uterine Carcinosarcoma_ph.csv
+│   │   └── UVM
+│   │       ├── Uveal Melanoma_expr.csv
+│   │       ├── Uveal Melanoma_expr_ph.Rdata
+│   │       └── Uveal Melanoma_ph.csv
+│   └── TcgaTargetGTEX_phenotype.txt.gz
+├── README_cn.md
+├── README.md
+├── reference
+│   ├── detailed_category.csv
+│   ├── TCGA_catagory.csv
+│   └── tcga_gtex_catagory.csv
+├── results
+│   ├── DEG.Rdata
+│   ├── DESeq2_DEG.csv
+│   ├── edgeR_DEG.csv
+│   ├── limma_voom_DEG.csv
+│   ├── tj.csv
+│   └── venn.pdf
+├── TCGA 联合 GTEX 分析流程.md
+└── tree.txt
+
+109 directories, 328 files
