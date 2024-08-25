@@ -1,0 +1,34 @@
+"","TCGA","category_ph","category_num","site","site_custom","Tumor","Normal","Num_gtex"
+"1","ACC","Adrenocortical Cancer",77,"Adrenal gland","Adrenal Gland",77,0,126
+"2","BLCA","Bladder Urothelial Carcinoma",426,"Bladder","Bladder",407,19,9
+"3","BRCA","Breast Invasive Carcinoma",1212,"Breast","Breast",1098,113,178
+"4","CESC","Cervical & Endocervical Cancer",308,"Cervix","Cervix Uteri",305,3,10
+"5","CHOL","Cholangiocarcinoma",45,"Bile duct","-",36,9,0
+"6","COAD","Colon Adenocarcinoma",330,"Colon","Colon",287,41,307
+"7","DLBC","Diffuse Large B-Cell Lymphoma",47,"Lymphatic tissue","Blood",47,0,337
+"8","ESCA","Esophageal Carcinoma",195,"Esophagus","Esophagus Mucosa",182,13,273
+"9","GBM","Glioblastoma Multiforme",171,"Brain","Brain Cerebrum",165,0,206
+"10","HNSC","Head & Neck Squamous Cell Carcinoma",564,"Head and Neck region","-",520,44,0
+"11","KICH","Kidney Chromophobe",91,"Kidney","Kidney",66,25,28
+"12","KIRC","Kidney Clear Cell Carcinoma",603,"Kidney","Kidney",531,72,28
+"13","KIRP","Kidney Papillary Cell Carcinoma",321,"Kidney","Kidney",289,32,28
+"14","LAML","Acute Myeloid Leukemia",173,"White blood cell","Bone Marrow",173,0,70
+"15","LGG","Brain Lower Grade Glioma",523,"Brain","Brain Cerebrum",522,0,206
+"16","LIHC","Liver Hepatocellular Carcinoma",421,"Liver","Liver",371,50,110
+"17","LUAD","Lung Adenocarcinoma",574,"Lung","Lung",515,59,288
+"18","LUSC","Lung Squamous Cell Carcinoma",548,"Lung","Lung",498,50,288
+"19","MESO","Mesothelioma",87,"Lining of body cavities","-",87,0,0
+"20","OV","Ovarian Serous Cystadenocarcinoma",427,"Ovary","Ovary",427,0,88
+"21","PAAD","Pancreatic Adenocarcinoma",183,"Pancreas","Pancreas",179,4,167
+"22","PCPG","Pheochromocytoma & Paraganglioma",185,"Paraganglia","-",182,3,0
+"23","PRAD","Prostate Adenocarcinoma",546,"Prostate","Prostate",495,51,100
+"24","READ","Rectum Adenocarcinoma",103,"Rectum","Colon",92,10,307
+"25","SARC","Sarcoma",264,"Soft tissue,Bone","-",262,2,0
+"26","SKCM","Skin Cutaneous Melanoma",470,"Skin","Skin",469,1,556
+"27","STAD","Stomach Adenocarcinoma",449,"Stomach","Stomach",413,36,175
+"28","TGCT","Testicular Germ Cell Tumor",154,"Testis","Testis",137,0,165
+"29","THCA","Thyroid Carcinoma",571,"Thyroid Gland","Thyroid",512,59,279
+"30","THYM","Thymoma",121,"Thymus","Blood",119,2,337
+"31","UCEC","Uterine Corpus Endometrioid Carcinoma",204,"Endometrium","Uterus",181,13,78
+"32","UCS","Uterine Carcinosarcoma",57,"Uterus","Uterus",57,0,78
+"33","UVM","Uveal Melanoma",79,"Eye","-",79,0,0

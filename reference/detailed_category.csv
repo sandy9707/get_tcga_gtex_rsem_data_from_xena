@@ -1,0 +1,55 @@
+,detailed_category,Num,_sample_type,_primary_site,_primary_site_num,GTEx_gepia2,GTEx_gepia2_num
+1,Adipose - Subcutaneous,316,Normal Tissue,Adipose Tissue,512,Adipose Tissue,515
+2,Adipose - Visceral (Omentum),196,Normal Tissue,Adipose Tissue,512,Adipose Tissue,515
+3,Adrenal Gland,126,Normal Tissue,Adrenal Gland,126,Adrenal Gland,128
+4,Artery - Aorta,206,Normal Tissue,Blood Vessel,604,Blood Vessel,606
+5,Artery - Coronary,118,Normal Tissue,Blood Vessel,604,Blood Vessel,606
+6,Artery - Tibial,280,Normal Tissue,Blood Vessel,604,Blood Vessel,606
+7,Bladder,9,Normal Tissue,Bladder,9,Bladder,9
+8,Brain - Amygdala,69,Normal Tissue,Brain,859,Brain ,945
+9,Brain - Anterior Cingulate Cortex (Ba24),83,Normal Tissue,Brain,289,Brain ,945
+10,Brain - Caudate (Basal Ganglia),108,Normal Tissue,Brain Basal Ganglia,393,Brain ,945
+11,Brain - Cerebellar Hemisphere,97,Normal Tissue,Brain Cerebellum,859,Brain ,945
+12,Brain - Cerebellum,117,Normal Tissue,Brain Cerebellum,859,Brain ,945
+13,Brain - Cortex,105,Normal Tissue,Brain Cerebrum,289,Brain ,945
+14,Brain - Frontal Cortex (Ba9),101,Normal Tissue,Brain Cerebrum,289,Brain ,945
+15,Brain - Hippocampus,84,Normal Tissue,Brain,859,Brain ,945
+16,Brain - Hypothalamus,82,Normal Tissue,Brain,859,Brain ,945
+17,Brain - Nucleus Accumbens (Basal Ganglia),104,Normal Tissue,Brain Basal Ganglia,393,Brain ,945
+18,Brain - Putamen (Basal Ganglia),81,Normal Tissue,Brain Basal Ganglia,393,Brain ,945
+19,Brain - Spinal Cord (Cervical C-1),60,Normal Tissue,Brain,859,Brain ,945
+20,Brain - Substantia Nigra,57,Normal Tissue,Brain Basal Ganglia,393,Brain ,945
+21,Breast - Mammary Tissue,178,Normal Tissue,Breast,178,Breast,179
+22,Cells - Ebv-Transformed Lymphocytes,107,Cell Line,Lymphocytes,107,Lymphocytes,107
+23,Cells - Leukemia Cell Line (Cml),70,Cell Line,Bone Marrow,70,Bone Marrow,70
+24,Cells - Transformed Fibroblasts,256,Cell Line,Fibroblasts,256,Fibroblasts,256
+25,Cervix - Ectocervix,6,Normal Tissue,Cervix Uteri,10,Cervix Uteri,10
+26,Cervix - Endocervix,4,Normal Tissue,Cervix Uteri,10,Cervix Uteri,10
+27,Colon - Sigmoid,141,Normal Tissue,Colon,307,Colon,308
+28,Colon - Transverse,166,Normal Tissue,Colon,307,Colon,308
+29,Esophagus - Gastroesophageal Junction,136,Normal Tissue,Esophagus Substance,381,Esophagus,382
+30,Esophagus - Mucosa,273,Normal Tissue,Esophagus Mucosa,273,Esophagus,273
+31,Esophagus - Muscularis,245,Normal Tissue,Esophagus Substance,381,Esophagus,382
+32,Fallopian Tube,5,Normal Tissue,Fallopian Tube,5,Fallopian Tube,5
+33,Heart - Atrial Appendage,175,Normal Tissue,Heart,376,Heart,377
+34,Heart - Left Ventricle,201,Normal Tissue,Heart,376,Heart,377
+35,Kidney - Cortex,28,Normal Tissue,Kidney,28,Kidney,28
+36,Liver,110,Normal Tissue,Liver,110,Liver,110
+37,Lung,288,Normal Tissue,Lung,288,Lung,288
+38,Minor Salivary Gland,55,Normal Tissue,Salivary Gland,55,Salivary Gland,55
+39,Muscle - Skeletal,395,Normal Tissue,Muscle,395,Muscle,396
+40,Nerve - Tibial,278,Normal Tissue,Nerve,278,Nerve,278
+41,Ovary,88,Normal Tissue,Ovary,88,Ovary,88
+42,Pancreas,167,Normal Tissue,Pancreas,167,Pancreas,167
+43,Pituitary,107,Normal Tissue,Pituitary,107,Pituitary,107
+44,Prostate,100,Normal Tissue,Prostate,100,Prostate,100
+45,Skin - Not Sun Exposed (Suprapubic),232,Normal Tissue,Skin,556,Skin,557
+46,Skin - Sun Exposed (Lower Leg),324,Normal Tissue,Skin,556,Skin,557
+47,Small Intestine - Terminal Ileum,92,Normal Tissue,Small Intestine,92,Small Intestine,92
+48,Spleen,100,Normal Tissue,Spleen,100,Spleen,100
+49,Stomach,175,Normal Tissue,Stomach,175,Stomach,175
+50,Testis,165,Normal Tissue,Testis,165,Testis,165
+51,Thyroid,279,Normal Tissue,Thyroid,279,Thyroid,278
+52,Uterus,78,Normal Tissue,Uterus,78,Uterus,78
+53,Vagina,85,Normal Tissue,Vagina,85,Vagina,85
+54,Whole Blood,337,Normal Tissue,Blood,337,Blood,337
